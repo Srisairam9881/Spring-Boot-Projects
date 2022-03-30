@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Contact Mangement System</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<!-- Create navigation bar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" th:href="@{/}">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" th:href="@{/addContact}">Add Contact Details<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Create Display All Contact Form -->
+<hr>
+<h1 align="center">Contacts List</h1>
+<hr>
+<div class="container">	
+<div class = "row">
+<table class="table table-bordered table-striped" id="contactTable">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Full Name</th>
+      <th scope="col">Phone Number</th>
+      <th scope="col">Email Id</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr th:each="contact:${contacts}">
+  <td th:text="${contact.name}"/>
+  <td th:text="${contact.phoneNo}"/>
+  <td th:text="${contact.email}"/>
+  <td>
+  <a th:href="@{/showUpdateForm(contactId=${contact.id})}" class="btn btn-info">Update</a>
+  <a th:href="@{/deleteEmployee(contactId=${contact.id})}" class="btn btn-danger ml-2">Delete</a>
+  </td>
+  </tr>
+  </tbody>
+</table>
+</div>
+</div>
+</body>
+</html>
