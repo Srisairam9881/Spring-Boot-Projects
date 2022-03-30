@@ -24,7 +24,7 @@ public class StudentController {
 	@GetMapping("/students")
 	public String listStudents(Model model) {
 		model.addAttribute("students", studentService.getAllStudents());
-		return "students";
+		return "students"; //here students is a template file name 
 	}
 	
 	@GetMapping("/students/new")
@@ -33,7 +33,7 @@ public class StudentController {
 		// create student object to hold student form data
 		studentData student = new studentData();
 		model.addAttribute("student", student);
-		return "create_student";
+		return "create_student"; //here create_student is a template file name 
 		
 	}
 	
@@ -46,7 +46,7 @@ public class StudentController {
 	@GetMapping("/students/edit/{id}")
 	public String editStudentForm(@PathVariable Long id, Model model) {
 		model.addAttribute("student", studentService.getStudentById(id));
-		return "edit_student";
+		return "edit_student"; //here edit_student is a template file name 
 	}
 
 	@PostMapping("/students/{id}")
