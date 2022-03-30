@@ -18,14 +18,14 @@ public class EmployeeController {
 	
 	@GetMapping({"/list", "/"})
 	public ModelAndView getAllEmployees() {
-		ModelAndView mav = new ModelAndView("list-employees");
+		ModelAndView mav = new ModelAndView("list-employees");  //here list-employees is a template file name 
 		mav.addObject("employees", eRepo.findAll());
 		return mav;
 	}
 	
 	@GetMapping("/addEmployeeForm")
 	public ModelAndView addEmployeeForm() {
-		ModelAndView mav = new ModelAndView("addEmployee");
+		ModelAndView mav = new ModelAndView("addEmployee");  //here addEmployee is a template file name 
 		Employee newEmployee = new Employee();
 		mav.addObject("employee", newEmployee);
 		return mav;
