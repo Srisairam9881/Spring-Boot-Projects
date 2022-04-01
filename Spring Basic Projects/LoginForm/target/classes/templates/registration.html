@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+<!-- Create Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="@{/registration}">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" th:href="@{/login}">Login<span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<br>
+<!-- Create Registration HTML Form -->
+<div class="container">
+<div class = "row">
+<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
+<h2 align="center">Registration</h2>
+<hr/>
+
+<!-- success message -->
+<div th:if="${param.success}">
+<div class="alert alert-info">You've successfully registered</div>
+</div>
+
+<form th:action="@{/registration}" th:object="${user}" method="post">
+  <div class="form-group">
+    <label for="exampleInputName1">Name</label>
+    <input type="text" class="form-control" required id="exampleInputName1" th:field="*{name}" aria-describedby="NameHelp" placeholder="Enter name">
+    </div>
+    
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" required id="exampleInputEmail1" th:field="*{email}" aria-describedby="emailHelp" placeholder="Enter email">
+  </div>
+  
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" required id="exampleInputPassword1" th:field="*{password}" placeholder="Password">
+  </div>
+  
+  <div class="form-group">
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <span>Have an account?<a href="/" th:href="@{/login}">Login here</a></span>
+  </div>
+  
+</form>
+
+<br>
+
+</div>
+</div>
+</div>
+
+
+
+
+
+</body>
+</html>
