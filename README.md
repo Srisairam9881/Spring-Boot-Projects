@@ -11,10 +11,11 @@
          spring.datasource.password=password
          spring.jpa.hibernate.ddl-auto=update
          spring.jpa.show-sql=true
-
-# DataBase Connection Method-2
+##
+## DataBase Connection Method-2
         spring.jpa.hibernate.ddl-auto=create
         spring.datasource.url=jdbc:mysql://localhost:3306/database_name
         spring.datasource.username=root
         spring.datasource.password=password
         spring.jpa.properties.hibernate.format_sql=true
+##
