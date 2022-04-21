@@ -5,6 +5,7 @@
 ##
 
 ## DataBase Connection Method-1
+   
    spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
    spring.datasource.url=jdbc:mysql://localhost:3306/database_name
    spring.datasource.username=root
