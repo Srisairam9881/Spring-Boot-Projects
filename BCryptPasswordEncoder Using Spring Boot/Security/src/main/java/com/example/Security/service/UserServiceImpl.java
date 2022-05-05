@@ -19,7 +19,9 @@ import com.example.Security.web.dto.UserRegistrationDto;
 @Service
 public class UserServiceImpl implements UserService  {
     private UserRepository userRepository; 
-	   
+	
+   //private BCryptPasswordEncoder passwordEncoder=new BCryptPasswordEncoder();
+	
     public UserServiceImpl(UserRepository userRepository) {
 		this.userRepository = userRepository;
 	}
